@@ -8,6 +8,11 @@ import base64
 
 app = FastAPI()
 
+@app.get("/")
+async def root():
+    # Verify DB connection
+    return {"message": "Hello World", "status": "OK"}
+
 @app.post("/detect-text/")
 async def detect_text(policy: str = Form(...), file: UploadFile = File(...)):
     print("Received request")
