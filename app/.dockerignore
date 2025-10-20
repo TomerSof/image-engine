@@ -1,0 +1,9 @@
+_pycache_/
+venv/
+deployment.yaml
+service.yaml
+README.md
+.gitignore
+*.png
+*.jpg
+*.jpeg

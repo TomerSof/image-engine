@@ -1,0 +1,47 @@
+replicaCount: 1
+
+image:
+  repository: image-engine
+  pullPolicy: IfNotPresent
+  tag: latest
+
+imagePullSecrets: []
+
+serviceAccount:
+  create: true
+  automount: true
+  annotations: {}
+  name: ""
+
+podAnnotations: {}
+podLabels: {}
+
+podSecurityContext: {}
+securityContext: {}
+
+service:
+  type: ClusterIP
+  port: 80
+
+# Ingress disabled for now — can enable later
+ingress:
+  enabled: false
+
+resources: {}
+
+# Your Python app listens on port 5000 (important!)
+containerPort: 8000
+
+# Optional health checks if your app has "/" route
+livenessProbe: {}
+readinessProbe: {}
+
+autoscaling:
+  enabled: false
+
+volumes: []
+volumeMounts: []
+
+nodeSelector: {}
+tolerations: []
+affinity: {}
